@@ -1,0 +1,42 @@
+@extends('layouts.app')
+
+@section('title')
+
+@section('content')
+
+<div align="center">
+<img src="http://userscontent2.emaze.com/images/33c58489-cf42-4a76-9ca4-94bb149cfa8d/Slide7_Pic3_636408719339374930.png"
+     width="250"
+     height="101">
+</div>
+<div class="block mx-auto my-10 p-8 bg-white w-1/3 border border-gray-200 
+rounded-lg shadow-lg">
+
+  <h1 class="text-3xl text-center font-bold">BIENVENIDO</h1>
+
+  <form class="mt-4" method="POST" action="">
+    @csrf
+
+    <input type="email" class="border border-gray-200 rounded-md bg-gray-200 w-full
+    text-lg placeholder-gray-900 p-2 my-2 focus:bg-white" placeholder="Correo"
+    id="email" name="email">
+
+    <input type="password" class="border border-gray-200 rounded-md bg-gray-200 w-full
+    text-lg placeholder-gray-900 p-2 my-2 focus:bg-white" placeholder="Contraseña"
+    id="password" name="password">
+    
+    @error('message')        
+      <p class="border border-red-500 rounded-md bg-red-100 w-full
+      text-red-600 p-2 my-2">* {{ $message }}</p>
+    @enderror
+
+    <button type="submit" class="rounded-md bg-indigo-500 w-full text-lg
+    text-white font-semibold p-2 my-3 hover:bg-indigo-600">Ingresar</button>
+
+
+  </form>
+
+
+</div>
+
+@endsection
